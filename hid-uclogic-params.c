@@ -120,6 +120,7 @@ static void uclogic_params_pen_cleanup(struct uclogic_params_pen *pen)
 	memset(pen, 0, sizeof(*pen));
 }
 
+
 /**
  * uclogic_params_pen_init_v1() - initialize tablet interface pen
  * input and retrieve its parameters from the device, using v1 protocol.
@@ -990,9 +991,24 @@ int uclogic_params_init(struct uclogic_params *params,
 	case VID_PID(USB_VENDOR_ID_UCLOGIC,
 		     USB_DEVICE_ID_HUION_TABLET):
 	case VID_PID(USB_VENDOR_ID_UCLOGIC,
-		     USB_DEVICE_ID_YIYNOVA_TABLET):
-	case VID_PID(USB_VENDOR_ID_UCLOGIC,
 		     USB_DEVICE_ID_UCLOGIC_UGEE_TABLET_81):
+		/* If this is the pen interface */
+		if (bInterfaceNumber == 0) {
+			/* Probe v1 pen parameters */
+			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
+			if (rc != 0) {
+				hid_err(hdev, "pen probing failed: %d\n", rc);
+				goto cleanup;
+			}
+			if (!found) {
+				hid_warn(hdev, "pen parameters not found");
+				uclogic_params_init_invalid(&p);
+			}
+		} else {
+			/* TODO: Consider marking the interface invalid */
+			uclogic_params_init_with_pen_unused(&p);
+		}
+		break;
 	case VID_PID(USB_VENDOR_ID_UCLOGIC,
 		     USB_DEVICE_ID_UCLOGIC_DRAWIMAGE_G3):
 	case VID_PID(USB_VENDOR_ID_UCLOGIC,
@@ -1003,6 +1019,49 @@ int uclogic_params_init(struct uclogic_params *params,
 		if (rc != 0)
 			goto cleanup;
 		break;
+	case VID_PID(USB_VENDOR_ID_UCLOGIC,
+		     USB_DEVICE_ID_UCLOGIC_UGEE_TABLET_STAR01):
+		/* If this is the pen and frame interface */
+		if (bInterfaceNumber == 0) {
+			/* Probe v1 pen parameters */
+			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
+			if (rc != 0) {
+				hid_err(hdev, "pen probing failed: %d\n", rc);
+				goto cleanup;
+			}
+			/* Initialize frame parameters */
+			rc = uclogic_params_frame_init_with_desc(
+				&p.frame,
+				uclogic_rdesc_star01_fixed2_arr,
+				uclogic_rdesc_star01_fixed2_size,0);
+			if (rc != 0)
+				goto cleanup;
+		} else {
+			/* TODO: Consider marking the interface invalid */
+			uclogic_params_init_with_pen_unused(&p);
+		}
+		break;		
+
+	case VID_PID(USB_VENDOR_ID_UCLOGIC,
+		     USB_DEVICE_ID_UCLOGIC_UGEE_TABLET_ART22E):
+		/* If this is the pen interface */
+		if (bInterfaceNumber == 0) {
+			/* Probe v1 pen parameters */
+			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
+			if (rc != 0) {
+				hid_err(hdev, "pen probing failed: %d\n", rc);
+				goto cleanup;
+			}
+			if (!found) {
+				hid_warn(hdev, "pen parameters not found");
+				uclogic_params_init_invalid(&p);
+			}
+		} else {
+			/* TODO: Consider marking the interface invalid */
+			uclogic_params_init_with_pen_unused(&p);
+		}
+		break;
+		     
 	case VID_PID(USB_VENDOR_ID_UGTIZER,
 		     USB_DEVICE_ID_UGTIZER_TABLET_GP0610):
 	case VID_PID(USB_VENDOR_ID_UGEE,
@@ -1026,29 +1085,7 @@ int uclogic_params_init(struct uclogic_params *params,
 			uclogic_params_init_with_pen_unused(&p);
 		}
 		break;
-	case VID_PID(USB_VENDOR_ID_UGEE,
-		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_DECO01):
-		/* If this is the pen and frame interface */
-		if (bInterfaceNumber == 1) {
-			/* Probe v1 pen parameters */
-			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
-			if (rc != 0) {
-				hid_err(hdev, "pen probing failed: %d\n", rc);
-				goto cleanup;
-			}
-			/* Initialize frame parameters */
-			rc = uclogic_params_frame_init_with_desc(
-				&p.frame,
-				uclogic_rdesc_xppen_deco01_frame_arr,
-				uclogic_rdesc_xppen_deco01_frame_size,
-				0);
-			if (rc != 0)
-				goto cleanup;
-		} else {
-			/* TODO: Consider marking the interface invalid */
-			uclogic_params_init_with_pen_unused(&p);
-		}
-		break;
+
 	case VID_PID(USB_VENDOR_ID_UGEE,
 		     USB_DEVICE_ID_UGEE_TABLET_G5):
 		/* Ignore non-pen interfaces */
@@ -1113,7 +1150,275 @@ int uclogic_params_init(struct uclogic_params *params,
 		}
 
 		break;
-	}
+		
+	case VID_PID(USB_VENDOR_ID_UCLOGIC,
+		      USB_DEVICE_ID_UGEE_TABLET_ART156PRO):
+		switch (bInterfaceNumber) {
+		case 0:
+			rc = WITH_OPT_DESC(ART156PRO_ORIG0, art156pro_fixed0);
+			if (rc != 0)
+				goto cleanup;
+			break;
+		case 1:
+			rc = WITH_OPT_DESC(ART156PRO_ORIG1, art156pro_fixed1);
+			if (rc != 0)
+				goto cleanup;
+			break;
+		case 2:
+			rc = WITH_OPT_DESC(ART156PRO_ORIG2, art156pro_fixed2);
+			if (rc != 0)
+				goto cleanup;
+			break;
+		}
+		break;			
+
+	case VID_PID(USB_VENDOR_ID_UCLOGIC,
+		     USB_DEVICE_ID_UCLOGIC_UGEE_ART10SV2):
+		/* If this is the pen and frame interface */
+		if (bInterfaceNumber == 0) {
+			/* Probe v1 pen parameters */
+			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
+			if (rc != 0) {
+				hid_err(hdev, "pen probing failed: %d\n", rc);
+				goto cleanup;
+			}
+			/* Initialize frame parameters */
+			rc = uclogic_params_frame_init_with_desc(
+				&p.frame,
+				uclogic_rdesc_art10sv2_fixed2_arr,
+				uclogic_rdesc_art10sv2_fixed2_size,0);
+			if (rc != 0)
+				goto cleanup;
+		} else {
+			/* TODO: Consider marking the interface invalid */
+			uclogic_params_init_with_pen_unused(&p);
+		}
+		break;
+
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_ART22EPRO):
+		switch (bInterfaceNumber) {
+		case 0:
+			rc = WITH_OPT_DESC(ART22EPRO_ORIG0, art22epro_fixed0);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 1:
+			rc = WITH_OPT_DESC(ART22EPRO_ORIG1, art22epro_fixed1);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 2:
+			rc = WITH_OPT_DESC(ART22EPRO_ORIG2, art22epro_fixed2);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		}
+		break;
+
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_ART156):
+		switch (bInterfaceNumber) {		     
+		case 0:
+			rc = WITH_OPT_DESC(ART156_ORIG0, art156_fixed0);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 1:
+			rc = WITH_OPT_DESC(ART156_ORIG1, art156_fixed1);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 2:
+			rc = WITH_OPT_DESC(ART156_ORIG2, art156_fixed2);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		}
+		break;
+		     		     
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_ART133):
+		switch (bInterfaceNumber) {
+		case 0:
+			rc = WITH_OPT_DESC(ART133_ORIG0, art133_fixed0);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 1:
+			rc = WITH_OPT_DESC(ART133_ORIG1, art133_fixed1);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 2:
+			rc = WITH_OPT_DESC(ART133_ORIG2, art133_fixed2);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		}
+		break;
+
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_ART16PRO):
+		switch (bInterfaceNumber) {
+		case 0:
+			rc = WITH_OPT_DESC(ART16PRO_ORIG0, art16pro_fixed0);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 1:
+			rc = WITH_OPT_DESC(ART16PRO_ORIG1, art16pro_fixed1);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 2:
+			rc = WITH_OPT_DESC(ART16PRO_ORIG2, art16pro_fixed2);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		}
+		break;
+
+
+
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_STAR06):
+		/* If this is the pen and frame interface */
+		if (bInterfaceNumber == 1) {
+			/* Probe v1 pen parameters */
+			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
+			if (rc != 0) {
+				hid_err(hdev, "pen probing failed: %d\n", rc);
+				goto cleanup;
+			}
+			/* Initialize frame parameters */
+			rc = uclogic_params_frame_init_with_desc(
+				&p.frame,
+				uclogic_rdesc_star06_fixed2_arr,
+				uclogic_rdesc_star06_fixed2_size,0);			
+			
+			if (rc != 0)
+				goto cleanup;
+		} else {
+			/* TODO: Consider marking the interface invalid */
+			uclogic_params_init_with_pen_unused(&p);
+		}
+		break;
+
+	case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_DECO01):
+		/* If this is the pen and frame interface */
+		if (bInterfaceNumber == 1) {
+			/* Probe v1 pen parameters */
+			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
+			if (rc != 0) {
+				hid_err(hdev, "pen probing failed: %d\n", rc);
+				goto cleanup;
+			}
+			/* Initialize frame parameters */
+			rc = uclogic_params_frame_init_with_desc(
+				&p.frame,
+				uclogic_rdesc_xppen_deco01_frame_arr,
+				uclogic_rdesc_xppen_deco01_frame_size,
+				0);
+			if (rc != 0)
+				goto cleanup;
+		} else {
+			/* TODO: Consider marking the interface invalid */
+			uclogic_params_init_with_pen_unused(&p);
+		}
+		break;
+
+
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_DECO01V2):
+		switch (bInterfaceNumber) {
+		case 0:
+			rc = WITH_OPT_DESC(DECO01V2_ORIG0, deco01v2_fixed0);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 1:
+			rc = WITH_OPT_DESC(DECO01V2_ORIG1, deco01v2_fixed1);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 2:
+			rc = WITH_OPT_DESC(DECO01V2_ORIG2, deco01v2_fixed2);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		}
+		break;
+
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_DECO02):
+		switch (bInterfaceNumber) {
+		case 0:
+			rc = WITH_OPT_DESC(DECO02_ORIG0, deco02_fixed0);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 1:
+			rc = WITH_OPT_DESC(DECO02_ORIG1, deco02_fixed1);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		case 2:
+			rc = WITH_OPT_DESC(DECO02_ORIG2, deco02_fixed2);
+			if (rc != 0) {
+				goto cleanup;
+			}
+			break;
+		}
+		break;
+				
+		case VID_PID(USB_VENDOR_ID_UGEE,
+		     USB_DEVICE_ID_UGEE_XPPEN_TABLET_DECO03):
+		/* If this is the pen and frame interface */
+		if (bInterfaceNumber == 1) {
+			/* Probe v1 pen parameters */
+			rc = uclogic_params_pen_init_v1(&p.pen, &found, hdev);
+			if (rc != 0) {
+				hid_err(hdev, "pen probing failed: %d\n", rc);
+				goto cleanup;
+			}
+			/* Initialize frame parameters */
+			rc = uclogic_params_frame_init_with_desc(
+				&p.frame,
+				uclogic_rdesc_xppen_deco01mod_frame_arr,
+				uclogic_rdesc_xppen_deco01mod_frame_size,
+				0);
+			if (rc != 0)
+				goto cleanup;
+		} else {
+			/* TODO: Consider marking the interface invalid */
+			uclogic_params_init_with_pen_unused(&p);
+		}
+		break;
+			
+			
+			
+		
+}		
+
 
 #undef VID_PID
 #undef WITH_OPT_DESC

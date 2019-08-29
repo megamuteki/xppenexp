@@ -135,9 +135,6 @@ extern const size_t uclogic_rdesc_buttonpad_v2_size;
 extern const __u8 uclogic_rdesc_ugee_ex07_buttonpad_arr[];
 extern const size_t uclogic_rdesc_ugee_ex07_buttonpad_size;
 
-/* Fixed report descriptor for XP-Pen Deco 01 frame controls */
-extern const __u8 uclogic_rdesc_xppen_deco01_frame_arr[];
-extern const size_t uclogic_rdesc_xppen_deco01_frame_size;
 
 /* Fixed report descriptor for Ugee G5 frame controls */
 extern const __u8 uclogic_rdesc_ugee_g5_frame_arr[];
@@ -151,5 +148,249 @@ extern const size_t uclogic_rdesc_ugee_g5_frame_size;
 
 /* Least-significant bit of Ugee G5 frame rotary encoder state */
 #define UCLOGIC_RDESC_UGEE_G5_FRAME_RE_LSB 38
+
+
+
+
+/* Size of the original descriptors of STAR01 tablet */
+#define UCLOGIC_RDESC_STAR01_ORIG0_SIZE	177
+#define UCLOGIC_RDESC_STAR01_ORIG1_SIZE	98
+#define UCLOGIC_RDESC_STAR01_ORIG2_SIZE	92
+
+/* Fixed STAR01 tablet report descriptor, interface 0 (stylus) */
+extern __u8 uclogic_rdesc_star01_fixed0_arr[];
+extern const size_t uclogic_rdesc_star01_fixed0_size;
+
+/* Fixed STAR01 tablet report descriptor, interface 1 (mouse) */
+extern __u8 uclogic_rdesc_star01_fixed1_arr[];
+extern const size_t uclogic_rdesc_star01_fixed1_size;
+
+/* Fixed STAR01 tablet report descriptor, interface 2 (frame buttons) */
+extern __u8 uclogic_rdesc_star01_fixed2_arr[];
+extern const size_t uclogic_rdesc_star01_fixed2_size;
+
+/* Size of the original descriptors of ART22E tablet */
+#define UCLOGIC_RDESC_ART22E_ORIG0_SIZE	179
+#define UCLOGIC_RDESC_ART22E_ORIG1_SIZE	183
+#define UCLOGIC_RDESC_ART22E_ORIG2_SIZE	92
+
+/* Fixed ART22E tablet report descriptor, interface 0 (stylus) */
+extern __u8 uclogic_rdesc_art22e_fixed0_arr[];
+extern const size_t uclogic_rdesc_art22e_fixed0_size;
+
+/* Fixed ART22E tablet report descriptor, interface 1 (mouse) */
+extern __u8 uclogic_rdesc_art22e_fixed1_arr[];
+extern const size_t uclogic_rdesc_art22e_fixed1_size;
+
+/* Fixed ART22E tablet report descriptor, interface 2 (frame buttons) */
+extern __u8 uclogic_rdesc_art22e_fixed2_arr[];
+extern const size_t uclogic_rdesc_art22e_fixed2_size;
+
+
+/* Size of the original descriptors of ART156PRO tablet */
+#define UCLOGIC_RDESC_ART156PRO_ORIG0_SIZE	177
+#define UCLOGIC_RDESC_ART156PRO_ORIG1_SIZE	134
+#define UCLOGIC_RDESC_ART156PRO_ORIG2_SIZE	36
+
+/* Fixed ART156PRO tablet report descriptor, interface 0 (stylus) */
+extern __u8 uclogic_rdesc_art156pro_fixed0_arr[];
+extern const size_t uclogic_rdesc_art156pro_fixed0_size;
+
+/* Fixed ART156PRO tablet report descriptor, interface 1 (mouse) */
+extern __u8 uclogic_rdesc_art156pro_fixed1_arr[];
+extern const size_t uclogic_rdesc_art156pro_fixed1_size;
+
+/* Fixed ART156PRO tablet report descriptor, interface 2 (frame buttons) */
+extern __u8 uclogic_rdesc_art156pro_fixed2_arr[];
+extern const size_t uclogic_rdesc_art156pro_fixed2_size;
+
+/* Size of the original descriptors of ART10SV2 tablet */
+#define UCLOGIC_RDESC_ART10SV2_ORIG0_SIZE	177
+#define UCLOGIC_RDESC_ART10SV2_ORIG1_SIZE	98
+#define UCLOGIC_RDESC_ART10SV2_ORIG2_SIZE	92
+
+/* Fixed art10sv2 tablet report descriptor, interface 0 (stylus) */
+extern __u8 uclogic_rdesc_art10sv2_fixed0_arr[];
+extern const size_t uclogic_rdesc_art10sv2_fixed0_size;
+
+/* Fixed art10sv2 tablet report descriptor, interface 1 (mouse) */
+extern __u8 uclogic_rdesc_art10sv2_fixed1_arr[];
+extern const size_t uclogic_rdesc_art10sv2_fixed1_size;
+
+/* Fixed art10sv2 tablet report descriptor, interface 2 (keyboard) */
+extern __u8 uclogic_rdesc_art10sv2_fixed2_arr[];
+extern const size_t uclogic_rdesc_art10sv2_fixed2_size;
+
+
+/* Size of the original descriptors of XP-PEN ART22EPRO */
+#define UCLOGIC_RDESC_ART22EPRO_ORIG0_SIZE	177
+#define UCLOGIC_RDESC_ART22EPRO_ORIG1_SIZE	210
+#define UCLOGIC_RDESC_ART22EPRO_ORIG2_SIZE	72
+
+/* Fixed art22epro tablet report descriptor, interface 0 (keyboard) */
+extern __u8 uclogic_rdesc_art22epro_fixed0_arr[];
+extern const size_t uclogic_rdesc_art22epro_fixed0_size;
+
+/* Fixed art22epr tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_art22epro_fixed1_arr[];
+extern const size_t uclogic_rdesc_art22epro_fixed1_size;
+
+/* Fixed art22epro tablet report descriptor, interface 2 (frame buttons) */
+extern __u8 uclogic_rdesc_art22epro_fixed2_arr[];
+extern const size_t uclogic_rdesc_art22epro_fixed2_size;
+
+/* Size of the original descriptors of XP-PEN ART156 */
+#define UCLOGIC_RDESC_ART156_ORIG0_SIZE	139
+#define UCLOGIC_RDESC_ART156_ORIG1_SIZE	140
+#define UCLOGIC_RDESC_ART156_ORIG2_SIZE	59
+
+/* Fixed art156 tablet report descriptor, interface 0 (keyboard) */
+extern __u8 uclogic_rdesc_art156_fixed0_arr[];
+extern const size_t uclogic_rdesc_art156_fixed0_size;
+
+/* Fixed art156 tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_art156_fixed1_arr[];
+extern const size_t uclogic_rdesc_art156_fixed1_size;
+
+/* Fixed art156 tablet report descriptor, interface 2 (frame buttons) */
+extern __u8 uclogic_rdesc_art156_fixed2_arr[];
+extern const size_t uclogic_rdesc_art156_fixed2_size;
+
+/* Size of the original descriptors of XP-PEN ART133 */
+#define UCLOGIC_RDESC_ART133_ORIG0_SIZE	139
+#define UCLOGIC_RDESC_ART133_ORIG1_SIZE	140
+#define UCLOGIC_RDESC_ART133_ORIG2_SIZE	59
+
+/* Fixed art133 tablet report descriptor, interface 0 (keyboard) */
+extern __u8 uclogic_rdesc_art133_fixed0_arr[];
+extern const size_t uclogic_rdesc_art133_fixed0_size;
+
+/* Fixed art133 tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_art133_fixed1_arr[];
+extern const size_t uclogic_rdesc_art133_fixed1_size;
+
+/* Fixed art133 tablet report descriptor, interface 2 (frame buttons) */
+extern __u8 uclogic_rdesc_art133_fixed2_arr[];
+extern const size_t uclogic_rdesc_art133_fixed2_size;
+
+/* Size of the original descriptors of XP-PEN ART16PRO */
+#define UCLOGIC_RDESC_ART16PRO_ORIG0_SIZE	177
+#define UCLOGIC_RDESC_ART16PRO_ORIG1_SIZE	210
+#define UCLOGIC_RDESC_ART16PRO_ORIG2_SIZE	72
+
+/* Fixed art16pro tablet report descriptor, interface 0 (keyboard) */
+extern __u8 uclogic_rdesc_art16pro_fixed0_arr[];
+extern const size_t uclogic_rdesc_art16pro_fixed0_size;
+
+/* Fixed art16pro tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_art16pro_fixed1_arr[];
+extern const size_t uclogic_rdesc_art16pro_fixed1_size;
+
+/* Fixed art16pro tablet report descriptor, interface 2 (frame buttons) */
+extern __u8 uclogic_rdesc_art16pro_fixed2_arr[];
+extern const size_t uclogic_rdesc_art16pro_fixed2_size;
+
+/* Size of the original descriptors of XP-PEN STAR06 */
+#define UCLOGIC_RDESC_STAR06_ORIG0_SIZE	139
+#define UCLOGIC_RDESC_STAR06_ORIG1_SIZE	180
+#define UCLOGIC_RDESC_STAR06_ORIG2_SIZE	36
+
+/* Fixed star06 tablet report descriptor, interface 0 (mouse) */
+extern __u8 uclogic_rdesc_star06_fixed0_arr[];
+extern const size_t uclogic_rdesc_star06_fixed0_size;
+
+/* Fixed star06 tablet report descriptor, interface 1 (pen ) */
+extern __u8 uclogic_rdesc_star06_fixed1_arr[];
+extern const size_t uclogic_rdesc_star06_fixed1_size;
+
+/* Fixed star06 tablet report descriptor, interface 2 (keys) */
+extern __u8 uclogic_rdesc_star06_fixed2_arr[];
+extern const size_t uclogic_rdesc_star06_fixed2_size;
+
+
+/* Fixed report descriptor for XP-Pen Deco 01 frame controls */
+extern const __u8 uclogic_rdesc_xppen_deco01_frame_arr[];
+extern const size_t uclogic_rdesc_xppen_deco01_frame_size;
+
+
+/* Fixed report descriptor for XP-Pen Deco 01mod frame controls */
+extern const __u8 uclogic_rdesc_xppen_deco01mod_frame_arr[];
+extern const size_t uclogic_rdesc_xppen_deco01mod_frame_size;
+
+
+
+/* Size of the original descriptors of XP-PEN DECO01 */
+#define UCLOGIC_RDESC_DECO01_ORIG0_SIZE	139
+#define UCLOGIC_RDESC_DECO01_ORIG1_SIZE	140
+#define UCLOGIC_RDESC_DECO01_ORIG2_SIZE	59
+
+/* Fixed deco01 tablet report descriptor, interface 0 (mouse) */
+extern __u8 uclogic_rdesc_deco01_fixed0_arr[];
+extern const size_t uclogic_rdesc_deco01_fixed0_size;
+
+/* Fixed deco01 tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_deco01_fixed1_arr[];
+extern const size_t uclogic_rdesc_deco01_fixed1_size;
+
+/* Fixed deco01 tablet report descriptor, interface 2 (param) */
+extern __u8 uclogic_rdesc_deco01_fixed2_arr[];
+extern const size_t uclogic_rdesc_deco01_fixed2_size;
+
+
+/* Size of the original descriptors of XP-PEN DECO01V2 */
+#define UCLOGIC_RDESC_DECO01V2_ORIG0_SIZE	177
+#define UCLOGIC_RDESC_DECO01V2_ORIG1_SIZE	237
+#define UCLOGIC_RDESC_DECO01V2_ORIG2_SIZE	36
+
+/* Fixed deco01v2 tablet report descriptor, interface 0 (mouse) */
+extern __u8 uclogic_rdesc_deco01v2_fixed0_arr[];
+extern const size_t uclogic_rdesc_deco01v2_fixed0_size;
+
+/* Fixed deco01v2 tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_deco01v2_fixed1_arr[];
+extern const size_t uclogic_rdesc_deco01v2_fixed1_size;
+
+/* Fixed deco01v2 tablet report descriptor, interface 2 (param) */
+extern __u8 uclogic_rdesc_deco01v2_fixed2_arr[];
+extern const size_t uclogic_rdesc_deco01v2_fixed2_size;
+
+
+/* Size of the original descriptors of XP-PEN DECO02 */
+#define UCLOGIC_RDESC_DECO02_ORIG0_SIZE	139
+#define UCLOGIC_RDESC_DECO02_ORIG1_SIZE	188
+#define UCLOGIC_RDESC_DECO02_ORIG2_SIZE	36
+
+/* Fixed deco02 tablet report descriptor, interface 0 (mouse) */
+extern __u8 uclogic_rdesc_deco02_fixed0_arr[];
+extern const size_t uclogic_rdesc_deco02_fixed0_size;
+
+/* Fixed deco02 tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_deco02_fixed1_arr[];
+extern const size_t uclogic_rdesc_deco02_fixed1_size;
+
+/* Fixed deco02 tablet report descriptor, interface 2 (param) */
+extern __u8 uclogic_rdesc_deco02_fixed2_arr[];
+extern const size_t uclogic_rdesc_deco02_fixed2_size;
+
+/* Size of the original descriptors of XP-PEN DECO03 */
+#define UCLOGIC_RDESC_DECO03_ORIG0_SIZE	139
+#define UCLOGIC_RDESC_DECO03_ORIG1_SIZE	180
+#define UCLOGIC_RDESC_DECO03_ORIG2_SIZE	36
+
+/* Fixed deco03 tablet report descriptor, interface 0 (mouse) */
+extern __u8 uclogic_rdesc_deco03_fixed0_arr[];
+extern const size_t uclogic_rdesc_deco03_fixed0_size;
+
+/* Fixed deco03 tablet report descriptor, interface 1 (pen) */
+extern __u8 uclogic_rdesc_deco03_fixed1_arr[];
+extern const size_t uclogic_rdesc_deco03_fixed1_size;
+
+/* Fixed deco03 tablet report descriptor, interface 2 (param) */
+extern __u8 uclogic_rdesc_deco03_fixed2_arr[];
+extern const size_t uclogic_rdesc_deco03_fixed2_size;
+
+
+
+
 
 #endif /* _HID_UCLOGIC_RDESC_H */
