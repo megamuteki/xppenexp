@@ -98,3 +98,40 @@ Upgrading / downgrading
 If you've manually installed a version of this package before, please
 uninstall it before installing another one, using the sources you used for
 installation.
+
+
+###XP-PEN Experimental model###
+XP-PEN
+○XP-Pen Artist10s
+○XP-Pen Artist10sV2
+○XP-Pen Artist13.3
+○XP-Pen Artist15.6
+○XP-Pen Artist15.6Pro
+○XP-Pen Artist16
+○XP-Pen Artist16Pro
+○XP-Pen Artist22HD
+○XP-Pen Artist22E
+○XP-Pen Artist22Pro
+○XP-Pen Artist22EPro
+○XP-Pen DECO01
+○XP-Pen DECO01V2
+○XP-Pen Deco02
+○XP-Pen DECO03
+○XP-PEN Star01
+○XP-Pen Star04
+○XP-Pen Star05
+○XP-Pen Star06
+○XP-PEN G430
+○XP-PEN G540
+
+UGEE
+○UGEE M708
+○UGEE UG-1910B
+○UGEE UG-2200
+○UGEE UG-2150
+○UGEE EX-07
+○UGEE G5
+
+
+
+
