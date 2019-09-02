@@ -100,7 +100,8 @@ uninstall it before installing another one, using the sources you used for
 installation.
 
 
-###XP-PEN Experimental model###
+Experimental Models
+-----------------------
 XP-PEN
 ○XP-Pen Artist10s
 ○XP-Pen Artist10sV2
@@ -131,7 +132,3 @@ UGEE
 ○UGEE UG-2150
 ○UGEE EX-07
 ○UGEE G5
-
-
-
-
