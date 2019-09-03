@@ -169,8 +169,12 @@ SamplePictures
 Linux Mint Tara XFCE & Wine
 
 ClipStudio
-Can not login cloud strage
+
+memo:Can not login cloud strage
 ![ClipStudio](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/ClipStudio.png)
+
+
+
 
 
 
