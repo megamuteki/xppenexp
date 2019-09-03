@@ -164,7 +164,15 @@ UGEE
 
 
 
-Experimental Models
+SamplePictures
 -----------------------
-![alt text](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/AzPainter.png)
+Linux Mint Tara XFCE & Wine
+
+ClipStudio
+Can not login cloud strage
+![ClipStudio](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/ClipStudio.png)
+
+
+
+![AZ-Painter](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/AzPainter.png)
 
