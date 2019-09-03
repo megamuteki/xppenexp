@@ -166,5 +166,5 @@ UGEE
 
 Experimental Models
 -----------------------
-[alt text](https://github.com/megamuteki/images/blob/master/xppenexp/AzPainter.png)
+[alt text](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/AzPainter.png)
 
