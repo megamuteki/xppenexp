@@ -202,12 +202,12 @@ memo:work perfectry
 A.wacom tablet setting
 
 memo:recognized as wacom. Wacom driver works
-![WacomTablet](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Tabconfig01.png)
+![WacomTablet](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/TabConfig01.png)
 
 B.MultiMonitorSetting
 
 memo:mirror mode, expantion mode, rotation, vartical, left hand setting works
-![MultiMonitor](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Tabconfig02.png)
+![MultiMonitor](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/TabConfig02.png)
 
 C.Express Key
 
