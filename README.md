@@ -206,7 +206,7 @@ memo:recognized as wacom. Wacom driver works
 
 B.MultiMonitorSetting
 
-memo:mirror mode, expantion mode, rotation, vartical, left hand setting works
+memo:mirror mode, expantion mode, rotation, vartical, left hand setting, calibrations etc. works
 ![MultiMonitor](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/TabConfig02.png)
 
 C.Express Key
