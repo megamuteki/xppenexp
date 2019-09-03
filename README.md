@@ -166,17 +166,45 @@ UGEE
 
 SamplePictures
 -----------------------
-Linux Mint Tara XFCE & Wine
+***Linux KDE Neon XFCE & Wine***
 
-ClipStudio
-
+A.ClipStudio
 memo:Can not login cloud strage
 ![ClipStudio](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/ClipStudio.png)
 
+B.OpenCanvas
+memo:windows7 or higher can not use menu strings
+![OpenCanvas](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/OpenCanvas.png)
 
+C.SAI
+memo:Can not use multiple tablets together
+![SAI2](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Sai2.png)
 
+***Linux KDE Neon XFCE**
 
-
-
+A.AZ-Painter
+memo:work perfectry
 ![AZ-Painter](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/AzPainter.png)
+
+B.OpenToonz
+memo:work perfectry
+![OpenToonz](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Toonz.png)
+
+
+
+***Linux KDE Neon XFCE & KDE tablet config & Artist15.6 Pro as dual monitors***
+
+A.wacom tablet setting
+memo:recognized as wacom. Wacom driver works
+![WacomTablet](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Tabconfig01.png)
+
+B.MultiMonitorSetting
+memo:mirror mode, expantion mode, rotation, vartical, left hand setting works
+![MultiMonitor](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Tabconfig02.png)
+
+C.Express Key
+memo:express key is worked by evdev. Default setting works. Not changeable.
+![Express Key](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Tabconfig03.png)
+
+
 
