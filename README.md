@@ -166,7 +166,7 @@ UGEE
 
 SamplePictures
 -----------------------
-***Linux KDE Neon XFCE & Wine***
+***Linux KDE Neon Plasma & Wine***
 
 A.ClipStudio
 
@@ -183,7 +183,7 @@ C.SAI
 memo:Can not use multiple tablets together
 ![SAI2](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Sai2.png)
 
-***Linux KDE Neon XFCE**
+***Linux KDE Neon Plasma**
 
 A.AZ-Painter
 
@@ -197,7 +197,7 @@ memo:work perfectry
 
 
 
-***Linux KDE Neon XFCE & KDE tablet config & Artist15.6 Pro as dual monitors***
+***Linux KDE Neon Plasma & KDE tablet config & Artist15.6 Pro as dual monitors***
 
 A.wacom tablet setting
 
