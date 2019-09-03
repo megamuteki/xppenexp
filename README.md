@@ -175,10 +175,10 @@ memo:Can not login cloud strage
 
 B.OpenCanvas
 
-memo:windows7 or higher can not use menu strings
+memo:windows xp or windows2000 are recommended
 ![OpenCanvas](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/OpenCanvas.png)
 
-C.SAI
+C.SAI2
 
 memo:Can not use multiple tablets together
 ![SAI2](https://raw.githubusercontent.com/megamuteki/images/master/xppenexp/Sai2.png)
