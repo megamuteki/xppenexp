@@ -136,6 +136,8 @@ XP-PEN
 
 ○XP-PEN Star01
 
+○XP-PEN Star02
+
 ○XP-PEN Star03
 
 ○XP-Pen Star04
