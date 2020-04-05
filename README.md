@@ -1,4 +1,4 @@
-# This is a experimental XP-PEN kernel module
+# This is a experimental XP-PEN kernel module(XP-PENカーネルモジュール)
 This is used digimend kernel module.
 Original Source Code
 Please refer original github.
